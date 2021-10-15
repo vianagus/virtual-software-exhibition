@@ -38,12 +38,8 @@ public class UserController : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1))
         {
-            Movement();
-        }
-
-        if(Input.GetMouseButtonUp(0))
-        {
             Interact();
+            Movement();
         }
     }
 
