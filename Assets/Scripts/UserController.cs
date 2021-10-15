@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class UserController : MonoBehaviour
 {
     private RaycastHit hit;
-
+    private NavMeshAgent navMeshAgent;
 
     [Header("Camera")]
     [SerializeField] Camera userCamera;
@@ -13,11 +13,13 @@ public class UserController : MonoBehaviour
     private float xRotation;
     private float yRotation;
 
-    private NavMeshAgent navMeshAgent;
+    // init UI
+    private UIPoster posterUI;
     
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        posterUI = FindObjectOfType<UIPoster>();
     }
 
     private void LateUpdate()
@@ -37,6 +39,11 @@ public class UserController : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             Movement();
+        }
+
+        if(Input.GetMouseButtonUp(0))
+        {
+            Interact();
         }
     }
 
@@ -68,6 +75,18 @@ public class UserController : MonoBehaviour
         {
             Vector3 destination = hit.point;
             navMeshAgent.SetDestination(destination);
+        }
+    }
+
+    private void Interact()
+    {
+        if(hit.collider == null) return;
+
+        // focus to poster
+        if(hit.collider.tag == "Poster")
+        {
+            Sprite poster = hit.collider.GetComponentInChildren<SpriteRenderer>().sprite;
+            posterUI.OpenPoster(poster);
         }
     }
 }
