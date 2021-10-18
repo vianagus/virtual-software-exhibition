@@ -27,10 +27,16 @@ public class UINavigationMenu : MonoBehaviour
     {
         openNavButton.SetActive(true);
         contentButtons.SetActive(false);
+        CloseAnyContent();
     }
 
     public void OnStandBoothListClick()
     {
         standBoothList.SetActive(true);
+    }
+
+    public void CloseAnyContent()
+    {
+        standBoothList.SetActive(false);
     }
 }
