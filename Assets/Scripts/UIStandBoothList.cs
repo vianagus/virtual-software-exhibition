@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStandBoothList : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class UIStandBoothList : MonoBehaviour
         foreach (StandBooth standBooth in standBoothsInScene)
         {
             GameObject standBoothList = Instantiate(standBoothButtonInstance);
-            standBoothList.GetComponent<ButtonStandBoothList>().SetStandBoothName(standBooth.GetName());
+            standBoothList.GetComponent<ButtonStandBoothList>().SetStandBooth(standBooth);
+            standBoothList.GetComponentInChildren<Text>().text = standBooth.GetName();
             standBoothList.transform.parent = listContainer.transform;
         }
     }

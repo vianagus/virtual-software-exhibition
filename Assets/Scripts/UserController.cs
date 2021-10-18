@@ -70,8 +70,13 @@ public class UserController : MonoBehaviour
         if(hit.collider.tag == "Floor")
         {
             Vector3 destination = hit.point;
-            navMeshAgent.SetDestination(destination);
+            MoveTo(destination);
         }
+    }
+
+    public void MoveTo(Vector3 destination)
+    {
+        navMeshAgent.SetDestination(destination);
     }
 
     private void Interact()

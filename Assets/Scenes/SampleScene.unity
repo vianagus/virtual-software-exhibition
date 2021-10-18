@@ -550,6 +550,11 @@ PrefabInstance:
       propertyPath: standBoothName
       value: TTS Merah Putih
       objectReference: {fileID: 0}
+    - target: {fileID: 1440278930922177741, guid: 9adeeb82d530162478d32c5bc011cd62,
+        type: 3}
+      propertyPath: distanceFromPivot
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2305577808481006712, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -707,6 +712,11 @@ PrefabInstance:
       propertyPath: standBoothName
       value: Ultraman Senja
       objectReference: {fileID: 0}
+    - target: {fileID: 1440278930922177741, guid: 9adeeb82d530162478d32c5bc011cd62,
+        type: 3}
+      propertyPath: distanceFromPivot
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2305577808481006712, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -746,7 +756,7 @@ PrefabInstance:
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
@@ -756,27 +766,27 @@ PrefabInstance:
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
@@ -791,7 +801,7 @@ PrefabInstance:
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2305577809872095109, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
@@ -1559,6 +1569,11 @@ PrefabInstance:
         type: 3}
       propertyPath: standBoothName
       value: MaWang Hasmter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1440278930922177741, guid: 9adeeb82d530162478d32c5bc011cd62,
+        type: 3}
+      propertyPath: distanceFromPivot
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2305577808481006712, guid: 9adeeb82d530162478d32c5bc011cd62,
         type: 3}
