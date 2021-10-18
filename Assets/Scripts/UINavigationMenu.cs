@@ -6,9 +6,13 @@ public class UINavigationMenu : MonoBehaviour
     [SerializeField] GameObject openNavButton;
     [SerializeField] GameObject contentButtons;
 
+    [Header("Initialize Contents")]
+    [SerializeField] GameObject standBoothList;
+
     private void Start()
     {
         contentButtons.SetActive(false);
+        standBoothList.SetActive(false);
     }
 
     // open navigation menu by button click
@@ -23,5 +27,10 @@ public class UINavigationMenu : MonoBehaviour
     {
         openNavButton.SetActive(true);
         contentButtons.SetActive(false);
+    }
+
+    public void OnStandBoothListClick()
+    {
+        standBoothList.SetActive(true);
     }
 }
