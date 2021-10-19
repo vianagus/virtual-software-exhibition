@@ -5,6 +5,7 @@ public class UserController : MonoBehaviour
 {
     private RaycastHit hit;
     private NavMeshAgent navMeshAgent;
+    private LineRenderer lineRenderer;
 
     [Header("Camera")]
     [SerializeField] Camera userCamera;
@@ -15,11 +16,21 @@ public class UserController : MonoBehaviour
 
     // init UI
     private UIPoster posterUI;
+    private UIDistanceWarning distanceWarningUI;
     
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+
+        // init UI
         posterUI = FindObjectOfType<UIPoster>();
+        distanceWarningUI = FindObjectOfType<UIDistanceWarning>();
+
+        // init for draw path
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.startWidth = 0.15f;
+        lineRenderer.endWidth = 0.15f;
+        lineRenderer.positionCount = 0;
     }
 
     private void LateUpdate()
@@ -40,6 +51,11 @@ public class UserController : MonoBehaviour
         {
             Interact();
             Movement();
+        }
+
+        if(navMeshAgent.hasPath)
+        {
+            DrawPath();
         }
     }
 
@@ -79,15 +95,42 @@ public class UserController : MonoBehaviour
         navMeshAgent.SetDestination(destination);
     }
 
+    private void DrawPath()
+    {
+        lineRenderer.positionCount = navMeshAgent.path.corners.Length;
+        lineRenderer.SetPosition(0, transform.position);
+
+        if(navMeshAgent.path.corners.Length < 2) return;
+
+        for (int i = 1; i < navMeshAgent.path.corners.Length; i++)
+        {
+            Vector3 pointPosition = new Vector3(navMeshAgent.path.corners[i].x,
+                                                navMeshAgent.path.corners[i].y,
+                                                navMeshAgent.path.corners[i].z);
+            lineRenderer.SetPosition(i, pointPosition);
+        }
+    }
+
     private void Interact()
     {
         if(hit.collider == null) return;
 
-        // focus to poster
+        // interact with poster
         if(hit.collider.tag == "Poster")
         {
-            Sprite poster = hit.collider.GetComponentInChildren<SpriteRenderer>().sprite;
-            posterUI.OpenPoster(poster);
+            float reachLimit = 4f;
+            float distance = Vector3.Distance(transform.position, hit.collider.transform.position);
+
+            if(distance > reachLimit) // show distance warning UI if too far from the stand booth
+            {
+                // show distance warning in duration
+                distanceWarningUI.Active(1.5f);
+            }
+            else // show poster UI
+            {
+                Sprite poster = hit.collider.GetComponentInChildren<SpriteRenderer>().sprite;
+                posterUI.OpenPoster(poster);
+            }
         }
     }
 }
