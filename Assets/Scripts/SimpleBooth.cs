@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Video;
 
 [ExecuteInEditMode]
 [RequireComponent(typeof(StandBooth))]

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Video;
 
 public class StandBooth : MonoBehaviour
 {
@@ -16,8 +17,10 @@ public class StandBooth : MonoBehaviour
     [SerializeField] string demoLink;
 
     [Header("More")]
+    [SerializeField] Sprite logo;
     [SerializeField] Sprite poster;
-    
+    [SerializeField] VideoClip video;
+
     private Vector3 travelPoint;
     private float distanceFromPivot = 2;
 
@@ -63,9 +66,19 @@ public class StandBooth : MonoBehaviour
         return this.teamMembers[i].memberInfo;
     }
 
+    public Sprite GetLogo()
+    {
+        return this.logo;
+    }
+
     public Sprite GetPoster()
     {
         return this.poster;
+    }
+
+    public VideoClip GetVideo()
+    {
+        return this.video;
     }
 
     public Vector3 GetStandBoothTravelPoint()
