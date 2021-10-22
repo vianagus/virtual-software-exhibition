@@ -19,7 +19,7 @@ public class UIStandBoothList : MonoBehaviour
         {
             GameObject standBoothList = Instantiate(standBoothButtonInstance);
             standBoothList.GetComponent<ButtonStandBoothList>().SetStandBooth(standBooth);
-            standBoothList.GetComponentInChildren<Text>().text = standBooth.GetName();
+            standBoothList.GetComponentInChildren<Text>().text = standBooth.GetProductName();
             standBoothList.transform.parent = listContainer.transform;
         }
     }

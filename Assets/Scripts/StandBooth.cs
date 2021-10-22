@@ -2,18 +2,70 @@
 
 public class StandBooth : MonoBehaviour
 {
-    [SerializeField] string standBoothName;
-    [SerializeField] float distanceFromPivot;
+    [Header("Product")]
+    [SerializeField] string productName;
+    [TextArea(3,6)] [SerializeField] string productPitch;
+    [TextArea(3,6)] [SerializeField] string productDescription;
+
+    [Header("Team")]
+    [SerializeField] string teamName;
+    [SerializeField] TeamMember[] teamMembers;
+
+    [Header("Link")]
+    [SerializeField] string presentationLink;
+    [SerializeField] string demoLink;
+
+    [Header("More")]
+    [SerializeField] Sprite poster;
+    
     private Vector3 travelPoint;
+    private float distanceFromPivot = 2;
+
+    [System.Serializable]
+    class TeamMember
+    {
+        public string memberName;
+        public string memberInfo;
+    }
 
     private void Start() 
     {
         travelPoint = transform.position + transform.TransformDirection(Vector3.forward * distanceFromPivot);
     }
 
-    public string GetName()
+    public string GetProductName()
     {
-        return this.standBoothName;
+        return this.productName;
+    }
+
+    public string GetProductPitch()
+    {
+        return this.productPitch;
+    }
+
+    public string GetProductDescription()
+    {
+        return this.productDescription;
+    }
+
+    public string GetTeamName()
+    {
+        return this.teamName;
+    }
+
+    public string GetTeamMemberName(int i)
+    {
+        return this.teamMembers[i].memberName;
+    }
+
+    public string GetTeamMemberInfo(int i)
+    {
+        return this.teamMembers[i].memberInfo;
+    }
+
+    public Sprite GetPoster()
+    {
+        return this.poster;
     }
 
     public Vector3 GetStandBoothTravelPoint()

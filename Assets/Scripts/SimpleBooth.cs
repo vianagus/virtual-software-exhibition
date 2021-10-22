@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 
 [ExecuteInEditMode]
+[RequireComponent(typeof(StandBooth))]
 public class SimpleBooth : MonoBehaviour
 {
-    [SerializeField] Sprite poster;
-
+    private StandBooth standBooth;
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
+        standBooth = GetComponent<StandBooth>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
@@ -16,6 +17,6 @@ public class SimpleBooth : MonoBehaviour
     {
         spriteRenderer.drawMode = SpriteDrawMode.Sliced;
         spriteRenderer.size = new Vector2(0.8411f, 1.189f); // A0 paper size
-        spriteRenderer.sprite = poster;
+        spriteRenderer.sprite = standBooth.GetPoster();
     }
 }
