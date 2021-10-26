@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1283488417314879966}
-  - {fileID: 5952655498691185289}
+  - {fileID: 8465685441716665924}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,7 +126,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1604799442699738677}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &7553486368621654018
+--- !u!1001 &5707014521483609295
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -142,11 +142,6 @@ PrefabInstance:
         type: 3}
       propertyPath: MaxDistance
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172805465347594981, guid: a867b24003b303e4181843c5165c41fe,
-        type: 3}
-      propertyPath: m_TargetAudioSources.Array.data[0]
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2783507766870270273, guid: a867b24003b303e4181843c5165c41fe,
         type: 3}
@@ -210,9 +205,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a867b24003b303e4181843c5165c41fe, type: 3}
---- !u!4 &5952655498691185289 stripped
+--- !u!4 &8465685441716665924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4201659948556450443, guid: a867b24003b303e4181843c5165c41fe,
     type: 3}
-  m_PrefabInstance: {fileID: 7553486368621654018}
+  m_PrefabInstance: {fileID: 5707014521483609295}
   m_PrefabAsset: {fileID: 0}
