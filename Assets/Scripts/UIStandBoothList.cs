@@ -17,6 +17,7 @@ public class UIStandBoothList : MonoBehaviour
 
         foreach (StandBooth standBooth in standBoothsInScene)
         {
+            if(standBooth.GetProductName() == "") continue;
             GameObject standBoothList = Instantiate(standBoothButtonInstance);
             standBoothList.GetComponent<ButtonStandBoothList>().SetStandBooth(standBooth);
             standBoothList.GetComponentInChildren<Text>().text = standBooth.GetProductName();

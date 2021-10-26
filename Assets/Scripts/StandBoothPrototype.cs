@@ -26,6 +26,7 @@ public class StandBoothPrototype : MonoBehaviour
 
     private void SetPoster(Sprite posterSprite)
     {
+        if(posterSprite == null) return;
         poster.drawMode = SpriteDrawMode.Sliced;
         poster.size = new Vector2(0.8411f * 2, 1.189f * 2); // A0 paper size x 2
         poster.sprite = posterSprite;
