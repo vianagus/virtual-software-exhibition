@@ -15,6 +15,7 @@ public class UserController : MonoBehaviour
     private float yRotation;
 
     // init UI
+    private UIBrochure brochureUI;
     private UIPoster posterUI;
     private UIDistanceWarning distanceWarningUI;
     
@@ -23,6 +24,7 @@ public class UserController : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
 
         // init UI
+        brochureUI = FindObjectOfType<UIBrochure>();
         posterUI = FindObjectOfType<UIPoster>();
         distanceWarningUI = FindObjectOfType<UIDistanceWarning>();
 
@@ -116,21 +118,36 @@ public class UserController : MonoBehaviour
         if(hit.collider == null) return;
 
         // interact with poster
-        if(hit.collider.tag == "Poster")
+        if(hit.collider.CompareTag("Poster"))
         {
-            float reachLimit = 4f;
-            float distance = Vector3.Distance(transform.position, hit.collider.transform.position);
-
-            if(distance > reachLimit) // show distance warning UI if too far from the stand booth
-            {
-                // show distance warning in duration
-                distanceWarningUI.Active(1.5f);
-            }
-            else // show poster UI
-            {
-                Sprite poster = hit.collider.GetComponentInChildren<SpriteRenderer>().sprite;
-                posterUI.OpenPoster(poster);
-            }
+            ShowPoster();
         }
+        else if(hit.collider.CompareTag("Brochure"))
+        {
+            ShowBrochure();
+        }
+    }
+
+    private void ShowPoster()
+    {
+        float reachLimit = 6f;
+        float distance = Vector3.Distance(transform.position, hit.collider.transform.position);
+
+        if (distance > reachLimit) // show distance warning UI if too far from the stand booth
+        {
+            // show distance warning in duration
+            distanceWarningUI.Active(1.5f);
+        }
+        else // show poster UI
+        {
+            Sprite poster = hit.collider.GetComponentInChildren<SpriteRenderer>().sprite;
+            posterUI.OpenPoster(poster);
+        }
+    }
+
+    private void ShowBrochure()
+    {
+        StandBooth standBooth = hit.collider.GetComponentInParent<StandBooth>();
+        brochureUI.OpenBrochure(standBooth);
     }
 }
