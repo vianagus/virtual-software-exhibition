@@ -5,16 +5,15 @@ public class StandBooth : MonoBehaviour
 {
     [Header("Product")]
     [SerializeField] string productName;
-    [TextArea(3,6)] [SerializeField] string productPitch;
     [TextArea(3,6)] [SerializeField] string productDescription;
-
-    [Header("Team")]
-    [SerializeField] string teamName;
-    [SerializeField] TeamMember[] teamMembers;
 
     [Header("Link")]
     [SerializeField] string presentationLink;
     [SerializeField] string demoLink;
+
+    [Header("Team")]
+    [SerializeField] string teamName;
+    [SerializeField] TeamMember[] teamMembers;
 
     [Header("More")]
     [SerializeField] Sprite logo;
@@ -41,14 +40,19 @@ public class StandBooth : MonoBehaviour
         return this.productName;
     }
 
-    public string GetProductPitch()
-    {
-        return this.productPitch;
-    }
-
     public string GetProductDescription()
     {
         return this.productDescription;
+    }
+
+    public string GetPresentationLink()
+    {
+        return this.presentationLink;
+    }
+
+    public string GetDemoLink()
+    {
+        return this.demoLink;
     }
 
     public string GetTeamName()
