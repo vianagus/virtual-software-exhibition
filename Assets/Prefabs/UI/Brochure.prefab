@@ -93,7 +93,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3475856284671340865
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1110,6 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brochureContainer: {fileID: 6941755366379892683}
+  linksContainer: {fileID: 6645722457923291958}
   productLogo: {fileID: 5217495388135586619}
   productName: {fileID: 873628151348601412}
   description: {fileID: 3109462511962701340}

@@ -6,6 +6,7 @@ public class UIBrochure : MonoBehaviour
 {
     [Header("Initialize Container")]
     [SerializeField] GameObject brochureContainer;
+    [SerializeField] GameObject linksContainer;
 
     [Header("Initialize Contents")]
     [SerializeField] Image productLogo;
@@ -37,9 +38,16 @@ public class UIBrochure : MonoBehaviour
 
     private void SetLinks(string presentationLink, string demoLink)
     {
-        // for presentation link
+        // hide links part when all link is empty
+        if(presentationLink.Equals("") && demoLink.Equals(""))
+        {
+            linksContainer.SetActive(false);
+        }
+
+        // show/hide presentation link
         if(!presentationLink.Equals(""))
         {
+            linksContainer.SetActive(true);
             this.presentationLink.GetComponent<ButtonOpenLink>().SetURL(presentationLink);
             this.presentationLink.gameObject.SetActive(true);
         }
@@ -48,9 +56,10 @@ public class UIBrochure : MonoBehaviour
             this.presentationLink.gameObject.SetActive(false);
         }
 
-        // for demo link
+        // shiw/hide demo link
         if(!demoLink.Equals(""))
         {
+            linksContainer.SetActive(true);
             this.demoLink.GetComponent<ButtonOpenLink>().SetURL(demoLink);
             this.demoLink.gameObject.SetActive(true);
         }
