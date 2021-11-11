@@ -24,7 +24,7 @@ public class StandBooth : MonoBehaviour
     private float distanceFromPivot = 2;
 
     [System.Serializable]
-    class TeamMember
+    public class TeamMember
     {
         public string memberName;
         public string memberInfo;
@@ -58,6 +58,11 @@ public class StandBooth : MonoBehaviour
     public string GetTeamName()
     {
         return this.teamName;
+    }
+
+    public TeamMember[] GetTeamMembers()
+    {
+        return this.teamMembers;
     }
 
     public string GetTeamMemberName(int i)

@@ -4,16 +4,23 @@ using UnityEngine.UI;
 
 public class UIBrochure : MonoBehaviour
 {
-    [Header("Initialize Container")]
+    [Header("Containers")]
     [SerializeField] GameObject brochureContainer;
     [SerializeField] GameObject linksContainer;
 
-    [Header("Initialize Contents")]
+    [Header("Contents")]
     [SerializeField] Image productLogo;
     [SerializeField] Text productName;
     [SerializeField] Text description;
+
+    [Header("Links")]
     [SerializeField] Button presentationLink;
     [SerializeField] Button demoLink;
+
+    [Header("Team")]
+    [SerializeField] Text teamName;
+    [SerializeField] Text instanceTeamMember;
+    [SerializeField] Transform memberListContainer;
 
     private void Start() 
     {
@@ -69,11 +76,35 @@ public class UIBrochure : MonoBehaviour
         }
     }
 
+    private void SetTeam(Text instanceTeamMember, StandBooth standBooth)
+    {
+        this.teamName.text = standBooth.GetTeamName();
+
+        // destroy all members
+        Text[] memberList = memberListContainer.GetComponentsInChildren<Text>();
+        if(memberList.Length != 0)
+        {
+            foreach (var member in memberList)
+            {
+                Destroy(member.gameObject);
+            }
+        }
+
+        // instance members
+        foreach (var member in standBooth.GetTeamMembers())
+        {
+            Text instanceMember = Instantiate(instanceTeamMember);
+            instanceMember.transform.parent = memberListContainer.transform;
+            instanceMember.text = member.memberName + "\n" + member.memberInfo;
+        }
+    }
+
     public void OpenBrochure(StandBooth standBooth)
     {
         SetLogo(standBooth.GetLogo());
         SetName(standBooth.GetProductName());
         SetDescription(standBooth.GetProductDescription());
+        SetTeam(instanceTeamMember, standBooth);
         SetLinks(standBooth.GetPresentationLink(), standBooth.GetDemoLink());
 
         brochureContainer.SetActive(true);
