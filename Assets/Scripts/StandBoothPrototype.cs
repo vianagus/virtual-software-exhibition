@@ -2,26 +2,22 @@
 using UnityEngine.Video;
 
 [ExecuteInEditMode]
-[RequireComponent(typeof(StandBooth))]
-public class StandBoothPrototype : MonoBehaviour
+public class StandBoothPrototype : StandBooth
 {
-    private StandBooth standBooth;
     private SpriteRenderer poster;
     private VideoPlayer video;
-    
 
     private void Awake()
     {
-        standBooth = GetComponent<StandBooth>();
         poster = GetComponentInChildren<SpriteRenderer>();
         video = GetComponentInChildren<VideoPlayer>();
 
-        SetVideo(standBooth.GetVideo());
+        SetVideo(GetVideo());
     }
 
     private void Update()
     {
-        SetPoster(standBooth.GetPoster());
+        SetPoster(GetPoster());
     }
 
     private void SetPoster(Sprite posterSprite)
