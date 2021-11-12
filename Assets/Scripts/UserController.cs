@@ -131,7 +131,7 @@ public class UserController : MonoBehaviour
     private void ShowPoster()
     {
         float reachLimit = 6f;
-        float distance = Vector3.Distance(transform.position, hit.collider.transform.position);
+        float distance = Vector3.Distance(transform.position, hit.collider.GetComponentInParent<StandBooth>().transform.position);
 
         if (distance > reachLimit) // show distance warning UI if too far from the stand booth
         {
