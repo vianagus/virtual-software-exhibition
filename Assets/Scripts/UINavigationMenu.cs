@@ -8,6 +8,7 @@ public class UINavigationMenu : MonoBehaviour
 
     [Header("Initialize Contents")]
     [SerializeField] GameObject standBoothList;
+    [SerializeField] GameObject help;
 
     private void Start()
     {
@@ -32,11 +33,19 @@ public class UINavigationMenu : MonoBehaviour
 
     public void OnStandBoothListClick()
     {
+        CloseAnyContent();
         standBoothList.SetActive(true);
+    }
+
+    public void OnHelpClick()
+    {
+        CloseAnyContent();
+        help.SetActive(true);
     }
 
     public void CloseAnyContent()
     {
         standBoothList.SetActive(false);
+        help.SetActive(false);
     }
 }

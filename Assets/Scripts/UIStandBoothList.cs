@@ -24,9 +24,4 @@ public class UIStandBoothList : MonoBehaviour
             standBoothList.transform.parent = listContainer.transform;
         }
     }
-
-    public void OnCloseButtonClick()
-    {
-        gameObject.SetActive(false);
-    }
 }
