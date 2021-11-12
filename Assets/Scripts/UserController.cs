@@ -42,18 +42,11 @@ public class UserController : MonoBehaviour
 
     private void Update()
     {
-        Raycast();
+        if(Input.GetMouseButton(0)) CameraLook();
 
-        if(Input.GetMouseButton(0))
-        {
-            CameraLook();
-        }
+        if(Input.GetMouseButtonDown(1)) Movement();
 
-        if(Input.GetMouseButtonDown(1))
-        {
-            Interact();
-            Movement();
-        }
+        if(Input.GetMouseButtonUp(0)) Interact();
 
         if(navMeshAgent.hasPath)
         {
@@ -61,7 +54,7 @@ public class UserController : MonoBehaviour
         }
     }
 
-    private void Raycast()
+    private void ShootRaycast()
     {
         Ray ray = userCamera.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out hit);
@@ -84,6 +77,7 @@ public class UserController : MonoBehaviour
 
     private void Movement()
     {
+        ShootRaycast();
         if(hit.collider == null) return;
         if(hit.collider.tag == "Floor")
         {
@@ -115,6 +109,7 @@ public class UserController : MonoBehaviour
 
     private void Interact()
     {
+        ShootRaycast();
         if(hit.collider == null) return;
 
         // interact with poster
