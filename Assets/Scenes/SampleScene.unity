@@ -2560,6 +2560,18 @@ PrefabInstance:
         sequencing the command steps. You have to give at least 5 command steps and
         maximum at 14 command steps.'
       objectReference: {fileID: 0}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: poster
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c8f5e64819183d48bc822a185353008,
+        type: 3}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: logo
+      value: 
+      objectReference: {fileID: 21300000, guid: cb037d7ba60208c49bbcfe43f754e8a3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af90a8c4e09f489408696372d676c6d3, type: 3}
 --- !u!4 &1871105260 stripped
@@ -2851,6 +2863,18 @@ PrefabInstance:
       propertyPath: teamMembers.Array.data[2].memberInfo
       value: Audio Composer
       objectReference: {fileID: 0}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: logo
+      value: 
+      objectReference: {fileID: 21300000, guid: a3ab866367288634cb4ea638bc1ad8b6,
+        type: 3}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: poster
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c8f5e64819183d48bc822a185353008,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af90a8c4e09f489408696372d676c6d3, type: 3}
 --- !u!4 &2020663366 stripped
