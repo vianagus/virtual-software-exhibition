@@ -1452,15 +1452,15 @@ MonoBehaviour:
     rotate camera.
 
 
-    3. You could move to a stand booth via stand booth list
-    on navigation menu.
+    3. You can move to a stand booth via stand booth list on
+    navigation menu.
 
 
     4. Click brochure on the table to show product detail.
 
 
     5.
-    You could click the poster.'
+    You can click the poster.'
 --- !u!1 &7283813305023684827
 GameObject:
   m_ObjectHideFlags: 0
