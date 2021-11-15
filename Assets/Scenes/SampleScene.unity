@@ -2656,6 +2656,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stand Booth Prototype
       objectReference: {fileID: 0}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: video
+      value: 
+      objectReference: {fileID: 32900000, guid: e63283b21972a614684329ce2b07e19b,
+        type: 3}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: poster
+      value: 
+      objectReference: {fileID: 21300000, guid: 7c8f5e64819183d48bc822a185353008,
+        type: 3}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: productName
+      value: Cube Shooter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
+        type: 3}
+      propertyPath: productDescription
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af90a8c4e09f489408696372d676c6d3, type: 3}
 --- !u!4 &1921008705 stripped
@@ -2771,8 +2793,23 @@ PrefabInstance:
     - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
         type: 3}
       propertyPath: productDescription
-      value: A 2D platformer game where you can rewind time to overcome obstacles
+      value: 'A 2D platformer game where you can rewind time to overcome obstacles
         and solve puzzles.
+
+
+        How To Play
+
+        - Left/Right Arrow to move
+
+        -
+        Space to jump
+
+        - C to kick object
+
+        - Left Shift to rewind
+        objects
+
+        - X to rewind character'
       objectReference: {fileID: 0}
     - target: {fileID: 6831401979629081011, guid: af90a8c4e09f489408696372d676c6d3,
         type: 3}
